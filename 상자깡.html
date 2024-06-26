@@ -1,0 +1,96 @@
+    <style>
+        /* 모바일 기준 중간 정렬 최적화 */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tfoot {
+            background-color: #f2f2f2;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .probability {
+            text-align: right;
+        }
+
+        #totalProbability {
+            font-weight: bold;
+        }
+
+        /* 모바일 기준 중간 정렬 최적화 */
+        @media (max-width: 768px) {
+            table {
+                width: 90%;
+            }
+        }
+
+        /* 모바일 기준 중간 정렬 최적화 */
+        @media (max-width: 480px) {
+            table {
+                width: 80%;
+            }
+        }
+    </style>
+
+<body>
+    <h1>대현닷컴 상자깡 테스트 시스템</h1>
+    <label for="selectBox">선택</label>
+    <select id="selectBox" onchange="start(this.value)">
+        <option value="">선택하세요</option>
+        <option value="기본.json">기본</option>
+        <option value="프리미엄.json">프리미엄</option>
+        <option value="vip.json">vip</option>
+        <option value="시크릿.json">시크릿</option>
+    </select>
+
+    <table id="itemTable">
+        <thead>
+            <tr>
+                <th>체크</th>
+                <th>아이템</th>
+                <th>확률</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>총 확률</td>
+                <td id="totalProbability"></td>
+                <td>100</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <script src="index.js"></script>
+</body>
